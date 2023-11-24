@@ -9,9 +9,46 @@ build_search_index = true
 
 theme = "duckquill"
 
+generate_feed = true
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
 [extra]
+primary_color = "#282828"
+source_url = "https://github.com/Qkessler/enriquekesslerm.com"
+issues_url = "https://github.com/Qkessler/enriquekesslerm.com/issues"
+
+[extra.comments]
+# Your Mastodon API host; this should be where you have an account
+host = "mstdn.social"
+# Used to determine who the original/verified poster is;
+# role may be expanded in the future (e.g. for moderation).
+user = "qkessler"
+
+
+[extra.nav]
+# Display RSS/Atom feed button in the nav
+show_feed = true
+# Show icons next to links in the nav
+icons = true
+# Links used in the nav; any icon from https://icons.getbootstrap.com
+# can be used as the icon. The bi- prefix should not be added.
+links = [
+  {url = "/blog", name = "Blog", icon = "journal-bookmark-fill"},
+  {url = "/projects", name = "Projects", icon = "person-workspace"},
+  {url = "/about", name = "About", icon = "person-badge"},
+]
+
+[extra.footer]
+# "© Title, YEAR" in the footer
+show_copyright = true
+# Johnvertisement in the footer
+show_johnvert = false
+# "Powered by Zola and Duckquill" in footer
+show_powered_by = true
+# Link to website source
+show_source = true
+
