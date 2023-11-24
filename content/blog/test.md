@@ -1,10 +1,8 @@
 +++
-title = "L'élevage de chèvres, la carrière alternative de tous dévelopeurs'"
+title = "Test blog post"
+date = "2023-11-23"
 +++
 
-# This is a test header
-
+## This is a test header
 
 This is my article.
-
-I don't really see the theme being added to the page. Probably need to add it somewhere else?

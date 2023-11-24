@@ -17,9 +17,10 @@ generate_feed = true
 highlight_code = true
 
 [extra]
-primary_color = "#282828"
+primary_color = "000"
 source_url = "https://github.com/Qkessler/enriquekesslerm.com"
 issues_url = "https://github.com/Qkessler/enriquekesslerm.com/issues"
+date_format = "%F"
 
 [extra.comments]
 # Your Mastodon API host; this should be where you have an account
