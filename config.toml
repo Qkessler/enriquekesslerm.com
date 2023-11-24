@@ -1,4 +1,5 @@
 base_url = "https://enriquekesslerm.com"
+title = "enriquekesslerm.com"
 compile_sass = true
 build_search_index = true
 theme = "duckquill"
@@ -37,7 +38,7 @@ icons = true
 # can be used as the icon. The bi- prefix should not be added.
 links = [
   {url = "/blog", name = "Blog", icon = "journal-bookmark-fill"},
-  {url = "/projects", name = "Projects", icon = "person-workspace"},
+  {url = "/projects", name = "Projects", icon = "motherboard"},
   {url = "/about", name = "About", icon = "person-badge"},
 ]
 
