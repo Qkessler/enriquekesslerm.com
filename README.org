@@ -1,0 +1,5 @@
+* [[https://enriquekesslerm.com][enriquekesslerm.com]]
+
+My (second, see [[https://github.com/Qkessler/Gatsby-enriquekesslerm.com][first]]) personal web is officially up and running!
+
+This time, rather than spending the time building components and using a library for compiling my org files, I decided for everything to be as close to the bone as possible: static site generation. Since I support Rust deeply (and trying to push it forward inside Amazon), I found [[https://www.getzola.org][Zola]] to be particularly appealing. 
