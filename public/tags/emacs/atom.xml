@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>enriquekesslerm.com - emacs</title>
+    <link href="https://enriquekesslerm.com/tags/emacs/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://enriquekesslerm.com"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2022-04-17T00:00:00+00:00</updated>
+    <id>https://enriquekesslerm.com/tags/emacs/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Open or Raise Emacs</title>
+        <published>2022-04-17T00:00:00+00:00</published>
+        <updated>2022-04-17T00:00:00+00:00</updated>
+        <author>
+          <name>Quique Kessler Martínez</name>
+        </author>
+        <link rel="alternate" href="https://enriquekesslerm.com/blog/open-or-raise-emacs/" type="text/html"/>
+        <id>https://enriquekesslerm.com/blog/open-or-raise-emacs/</id>
+        
+        <content type="html">&lt;p&gt;I use &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.keyboardmaestro.com&#x2F;main&#x2F;&quot;&gt;Keyboard maestro&lt;&#x2F;a&gt; to Activate the applications I use the most, with the intention of reducing hand movement I endure every day. In my normal developing workflow, I would start working with Emacs to do my first Inbox Review, I would then open up the browser to search for anything while developing and I would then want to go back to Emacs to keep developing. Everything works with a keypress and following &lt;a rel=&quot;noopener&quot; target=&quot;_blank&quot; href=&quot;https:&#x2F;&#x2F;www.merriam-webster.com&#x2F;dictionary&#x2F;mnemonics&quot;&gt;mnemonics&lt;&#x2F;a&gt; to make the keys easier to remember.&lt;&#x2F;p&gt;
+&lt;p&gt;The latter is the part that I have been interested in improving. I use the Emacs client-server approach to have a fast running Emacs instance at all times. If I would want to close Emacs, I would be back to an open instance instantly.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem with Emacs is that having the server running, we can&#x27;t use the application condition with Keyboard maestro, since we already have an open application, even if it&#x27;s running in the background.&lt;&#x2F;p&gt;
+&lt;p&gt;The idea is then run an Apple script as the condition to check whether the Emacs process is running (and not the Emacs window) to launch the Emacs client, or only activate the window that is already there. To do so, I would want to use an Apple Script to grep for the background process.&lt;&#x2F;p&gt;
+&lt;p&gt;Here is the script that I use as condition:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;applescript&quot; style=&quot;background-color:#282828;color:#fdf4c1aa;&quot; class=&quot;language-applescript &quot;&gt;&lt;code class=&quot;language-applescript&quot; data-lang=&quot;applescript&quot;&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;tell &lt;&#x2F;span&gt;&lt;span style=&quot;color:#8ec07c;&quot;&gt;application &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;System Events&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;set &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fdf4c1;&quot;&gt;emacsWindowsCount &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;to &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;of&lt;&#x2F;span&gt;&lt;span&gt; window &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;of &lt;&#x2F;span&gt;&lt;span&gt;(processes &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;whose &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fabd2f;&quot;&gt;name &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b8bb26;&quot;&gt;&amp;quot;Emacs&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span&gt; emacsWindowsCount &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fe8019;&quot;&gt;is &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;0 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;then
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;error number &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d3869b;&quot;&gt;-1
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;end if
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fa5c4b;&quot;&gt;end tell
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And here is the Keyboard maestro macro I ended up with. The LauchEmacsClient is an application that I created with Automator to just call the &lt;code&gt;emacsclient&lt;&#x2F;code&gt; binary with the buffer I want to start with.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;enriquekesslerm.com&#x2F;blog&#x2F;open-or-raise-emacs&#x2F;images&#x2F;activate-emacs-macro.png&quot; alt=&quot;img&quot; title=&quot;Activate Emacs keyboard maestro macro.&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;If anyone is interested in the &lt;code&gt;.kmmacros&lt;&#x2F;code&gt; file, ping me on &lt;a href=&quot;mailto:enrique.kesslerm@gmail.com&quot;&gt;email&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

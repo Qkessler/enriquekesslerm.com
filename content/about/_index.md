@@ -12,6 +12,27 @@ I was born in Murcia, Spain and I have lived in the region my entire life (Carta
 
 I love learning, both from books and the internet. I work on personal projects to pick up new technologies and keep myself learning every day. On this website, I will publish most of my findings of the amazing world that we live in in the form of book reviews, notes and articles. I believe the openness will help me improve personally and professionally. Buckle up!
 
+## Timeline
+
+### 2023
+
+- Promotion to SDE II: After working for a year an a half in the Kindle Notifications team, I had the opportunity to deliver a 6 months long project, successfully and was promoted!
+
+### 2022
+
+- Work from home: After 5 months of living in Madrid, asked my manager to work from home, and moved back to Murcia, closer to family and Nuria!
+- Kindle Notifications: Started working on the Kindle Notifications team, learning an architecture that was transitioned to us from a team in Seattle.
+- Amazon Return Offer: After working as an intern for 3 months, I was offered to return to Amazon full-time, as a Software Development Engineer I. I was asked to move to Madrid.
+
+### 2021
+
+- Hired as an SDE Intern at Amazon: After a long selection process, I was extremely proud of being selected.
+- Met Nuria: My amazing, smart, beautiful girlfriend.
+
+### 2020
+
+- Covid hit in Spain for the first time: Around March we had the first Covid cases in Spain, and stayed at home for a month an a half. I was moved to work as a primary worker in El Corte Ingles.
+
 ## Travel Map
 
 {% mapbox(zoom=6) %}

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <title>enriquekesslerm.com</title>
-    <link href="https://enriquekesslerm.com/atom.xml" rel="self" type="application/atom+xml"/>
+    <title>enriquekesslerm.com - software</title>
+    <link href="https://enriquekesslerm.com/tags/software/atom.xml" rel="self" type="application/atom+xml"/>
     <link href="https://enriquekesslerm.com"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
     <updated>2022-04-17T00:00:00+00:00</updated>
-    <id>https://enriquekesslerm.com/atom.xml</id>
+    <id>https://enriquekesslerm.com/tags/software/atom.xml</id>
     <entry xml:lang="en">
         <title>Open or Raise Emacs</title>
         <published>2022-04-17T00:00:00+00:00</published>

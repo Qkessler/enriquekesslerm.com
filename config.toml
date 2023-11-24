@@ -5,6 +5,9 @@ build_search_index = true
 theme = "duckquill"
 generate_feed = true
 author = "Quique Kessler Martínez"
+taxonomies = [
+  {name = "tags", feed = true},
+]
 
 [markdown]
 highlight_code = true
