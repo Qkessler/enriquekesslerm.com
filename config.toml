@@ -52,3 +52,8 @@ show_powered_by = true
 # Link to website source
 show_source = true
 
+[extra.mapbox]
+enabled = true
+
+# Default public token on mapbox.
+access_token = "pk.eyJ1IjoicWtlc3NsZXIiLCJhIjoiY2xwY3Jta2F1MHNvMTJrcDkwd2VqMmQ2byJ9.iMITWl2u_FynWJjM3Ys05g"
