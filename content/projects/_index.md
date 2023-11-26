@@ -8,7 +8,7 @@ I have been working on personal projects for a long time, as I believe they are 
 
 From time to time, I also publish some of my results to [LinkedIn](https://www.linkedin.com/in/enrique-kessler-martinez/).
 
-All of these projects were taken by running the Go tool I use to build my Github's README: https://github.com/Qkessler. The tool's repo is here: https://github.com/Qkessler/Qkessler-README 
+All of these projects were taken by running the Go tool I use to build [my Github's README](https://github.com/Qkessler). The tool's repo is [Qkessler-README](https://github.com/Qkessler/Qkessler-README).
 
 |  **Emacs Lisp**  |  **Rust**  |
 | :--: | :--: |
