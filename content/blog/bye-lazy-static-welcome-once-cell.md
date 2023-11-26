@@ -147,3 +147,35 @@ They seem to be symbols, probably for use on the different functions that we cre
 Let's start with the build.rs changes for once_cell, now that we know how that file will be created on the `OUT_DIR`, after reading its code and the rust documentation. I'm kinda split between using the unstable features or not. I would love the confirmation from the core maintainer.
 
 If we were to use the unstable `lazy_cell`, we can just use the initialization, which is more ergonomic, removing helper methods, which could prove tricky for the statics on the build.rs file: [INTERNED_SYMBOLS](https://github.com/CeleritasCelery/rune/blob/master/build.rs#L232)
+
+``` rust
+writeln!(
+    f,
+    "
+use std::sync::LazyLock;
+pub(crate) static INTERNED_SYMBOLS: LazyLock<Mutex<ObjectMap>> = LazyLock::new(|| Mutex::new({{
+    let size: usize = {symbol_len};
+    let mut map = SymbolMap::with_capacity(size);
+    sym::init_symbols(&mut map);
+    ObjectMap {{
+        map,
+        block: Block::new_global(),
+    }}
+}}));
+"
+```
+
+With `LazyLock`, the callers wouldn't have to call `get` on the OnceLock, and instead use the methods of the content directly, since by nature, **they can assume it has been initialized**. 
+
+I was pretty happy with the simplification, since it removes the forced initialization + comment on the [main.rs file](https://github.com/CeleritasCelery/rune/blob/master/src/main.rs#L47) and **removes the lazy_static dependency from the code base**:
+
+```diff
+ float-cmp = "0.9.0"
+ fn_macros = { version = "0.1.0", path = "fn_macros" }
+ hostname = "0.3.1"
+-lazy_static = "1.4.0"
+ memoffset = "0.8.0"
+ num_enum = "0.5.11"
+ paste = "1.0.12"
+```
+
