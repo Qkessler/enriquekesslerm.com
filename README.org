@@ -1,4 +1,4 @@
-[[file:DALL·E 2023-12-02 17.28.16 - An oil painting by Claude Monet of a cat with sunglasses reading a book.png][Myself on a Saturday Afternoon]]
+[[./DALL·E 2023-12-02 17.28.16 - An oil painting by Claude Monet of a cat with sunglasses reading a book.png][Myself on a Saturday Afternoon]]
 
 * [[https://enriquekesslerm.com][enriquekesslerm.com]]
 
