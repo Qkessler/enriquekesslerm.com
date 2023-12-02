@@ -41,6 +41,10 @@ I love learning, both from books and the internet. I work on personal projects t
     "features": [
         {
             "coordinates": [-3.47, 36.91],
+            "text": "New York - Oct 2023"
+        },
+        {
+            "coordinates": [-3.47, 36.91],
             "text": "Lanjarón - Aug 2020"
         },
         {
@@ -137,12 +141,12 @@ I love learning, both from books and the internet. I work on personal projects t
         },
         {
             "coordinates": [2.34, 48.86],
-            "text": "Paris - Sept 2022"
+            "text": "Paris - Oct 2022"
         },
         {
             "coordinates": [-1.8, 38.99],
             "text": "Albacete - Mar 2018"
-        }
+        },
     ]
 }
 {% end %}
