@@ -1,5 +1,5 @@
 +++
-title = "Set up the Rune project for success"
+title = "Setting up the Rune project for success"
 description = "The Rune project has been running successfully without CI for more than a year now. I see the next steps for the project as needing to introduce contributors to the codebase. For that, a robust CI pipeline is key to avoid any regressions on the master commits or PRs."
 date = 2023-12-02
 [taxonomies]
