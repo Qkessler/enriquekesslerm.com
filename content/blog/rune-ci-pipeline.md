@@ -26,11 +26,11 @@ With that, here's the first step: CI for the Rune project, buckle up!
 
 I was aware that Jon Gjenset (@jonhoo) did a super nice video explaining his recommendation for CI that should run on lib/bin crates ([ref](https://www.youtube.com/watch?v=xUH-4y92jPg&t=491s)). That video goes through an overview of some files of the project [rust-ci-conf](https://github.com/jonhoo/rust-ci-conf/), which is a set of Github Actions workflows to cover the bare minimum for crates: stepping stones to a great CI pipeline for our Rune project.
 
-With that, I used the project as a blueprint of what CI could look like and started modifying the workflows with the specific requirements of the \`rune\` crate. From the top of my head:
+With that, I used the project as a blueprint of what CI could look like and started modifying the workflows with the specific requirements of the `rune` crate. From the top of my head:
 
 -   Rune is a binary, not a library, so we can't run doctests on it.
 -   Rune has the rust-toolchain set to `beta` and that broke CI and is not common in other popular crates.
--   Rune does not have any feature gates so `cargo-hack` wouldn't do us ny ood.
+-   Rune does not have any feature gates so `cargo-hack` wouldn't do us any good.
 -   Rune does not run correctly on Windows (yet), so it wouldn't make sense to run CI on something we don't support yet.
 -   Rune uses `unsafe` code, which means we need to care about safety and ensure any change is sanitized and avoids any Undefined Behaviour.
 
