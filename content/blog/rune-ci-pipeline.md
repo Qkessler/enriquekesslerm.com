@@ -101,4 +101,4 @@ I was able to get a successfully configured CI pipeline for the Rune project, an
 
 Lots of work left, really excited about the future!
 
-P.S: Here's the PR link: https://github.com/CeleritasCelery/rune/pull/35
+P.S: Here's the PR link: [#35](https://github.com/CeleritasCelery/rune/pull/35)
