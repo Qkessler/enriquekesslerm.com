@@ -22,7 +22,6 @@ After very recently syncing with Troy, the owner of the Rune project (you can ch
 
 With that, here's the first step: CI for the Rune project, buckle up!
 
-
 ## Stepping stones
 
 I was aware that Jon Gjenset (@jonhoo) did a super nice video explaining his recommendation for CI that should run on lib/bin crates ([ref](https://www.youtube.com/watch?v=xUH-4y92jPg&t=491s)). That video goes through an overview of some files of the project [rust-ci-conf](https://github.com/jonhoo/rust-ci-conf/), which is a set of Github Actions workflows to cover the bare minimum for crates: stepping stones to a great CI pipeline for our Rune project.
@@ -85,6 +84,12 @@ Once the issue above is stabilized, we can add the following to the test.yml fir
 -   name: cargo test --doc
     run: cargo test --locked --all-features --doc
 ```
+
+## Iterative process
+
+The overarching theme with this contribution is: **I see CI as an iterative process, and I'm sure we'll be changing it in the future**. This acts as a good start, and opens the project to possible issues it may have, that CI now catches (say, dependency issue, as we see running `cargo test` with `-Zminimal-versions`).
+
+I see this first PR as not fixing all the issues with the repository, but rather creating the stepping stones to fix them in the next commits. Every commit that includes this PR has been tested with the CI changes, iterating on the process. I'm open to rebasing the commits if needed, but it's useful to see the iteration process to arrive to a CI that fits the project's needs.
 
 ## Conclusion
 
