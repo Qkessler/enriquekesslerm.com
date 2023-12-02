@@ -100,3 +100,5 @@ I was able to get a successfully configured CI pipeline for the Rune project, an
 -   Start playing with async code, where `loom` could potentially fit (and add it to the CI).
 
 Lots of work left, really excited about the future!
+
+P.S: Here's the PR link: https://github.com/CeleritasCelery/rune/pull/35
