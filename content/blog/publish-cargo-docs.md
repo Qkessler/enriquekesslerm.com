@@ -12,11 +12,11 @@ As discussed on <https://github.com/CeleritasCelery/rune/issues/48>, we see valu
 
 Was testing the way to publish the cargo doc output, and saw that the tracing crate is doing something very similar with netlify. Since I like netlify (have this web on there) thought that we can do an MVP with something similar to `tracing`: https://tracing-rs.netlify.app/tracing/
 
-First, we move the core changes I have on `master` to `core` again. We want to be clean for the `docs publishing` PR. We need depnedencies included as part of the builds on netlify, because we seem to need gdk and pango, as with the CI. Talking about CI, we need to only publish these changes upon push to mainline, which is kinda what netlify does by default, so we should be good there, no need to update the CI.
+First, we move the core changes I have on `master` to `core` again. We want to be clean for the `docs publishing` PR. We need dependencies included as part of the builds on netlify, because we seem to need gdk and pango, as with the CI. Talking about CI, we need to only publish these changes upon push to mainline, which is kinda what netlify does by default, so we should be good there, no need to update the CI.
 
 There are some issues with the dependencies, so I'm really interested in knowing why we have them on the rune repo either way. Do we require specific dependencies for anything? Can we gate those dependencies with features (cfg or something) to avoid this?
 
-Since we have that limitation, it sounds like we could build a CI step to happen on push to master where we would install rustup with the dependiences, run the command ourselves and deploy the target/doc, similar to what netlify is doing. I wonder whether netlify can just deploy a directory. Let's see with the netlify github action.
+Since we have that limitation, it sounds like we could build a CI step to happen on push to master where we would install rustup with the dependencies, run the command ourselves and deploy the target/doc, similar to what netlify is doing. I wonder whether netlify can just deploy a directory. Let's see with the netlify github action.
 
 ``` yaml
 # .github/workflows/netlify.yml
