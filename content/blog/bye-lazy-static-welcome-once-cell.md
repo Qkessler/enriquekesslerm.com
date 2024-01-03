@@ -20,7 +20,7 @@ Since it's included in the standard library, I thought we could just use that, b
 
 Nevertheless, for the sake of completion, I wanted to verify the minimal Rust version we support in the rune repo. For that, we can use the command provided by the [cargo-msrv crate](https://foresterre.github.io/cargo-msrv/): 
 
-``` shell
+```bash
 >  cargo msrv
 │     Checking fluent-syntax v0.11.0                                                     │
 │     Checking fluent-bundle v0.15.2                                                     │
@@ -114,7 +114,7 @@ I don't see that we are actually running the `println!` macros that I'm adding i
 
 Here's the output of my prints:
 
-``` shell
+```bash
 warning: rune@0.1.0: Reading "src/emacs.rs"
 warning: rune@0.1.0: name between predicates "kill_emacs"
 warning: rune@0.1.0: lisp_name: kill-emacs
@@ -128,7 +128,7 @@ warning: rune@0.1.0: lisp_name: go
 ```
 Basically, we read through the files and build all the defuns, but also the `defsym` and the `defvar` (ref: <https://github.com/CeleritasCelery/rune/blob/master/build.rs#L103-L110>). For the defsym, wanted to understand what they are a bit further. Added the print for [all_defsym](https://github.com/CeleritasCelery/rune/blob/master/build.rs#L143):
 
-``` shell
+```bash
 warning: rune@0.1.0: [("KW_TEST", None), ("KW_DOCUMENTATION", None), ("MD5", None), ("SHA1", None), ("SHA224", None), ("SHA256", None), ("SHA384", None), ("SHA512", None), ("MANY", None), ("INTEGER", None), ("SYMBOL", None), ("COMPILED_FUNCTION", None), ("HASH_TABLE", None), ("BUFFER", None), ("SUBR", None), ("FUNCTION", None), ("QUOTE", None), ("MACRO", None), ("UNQUOTE", Some("\",\"")), ("SPLICE", Some("\",@\"")), ("BACKQUOTE", Some("\"`\"")), ("AND_OPTIONAL", Some("\"&optional\"")), ("AND_REST", Some("\"&rest\"")), ("LAMBDA", None), ("CLOSURE", None), ("CONDITION_CASE", None), ("UNWIND_PROTECT", None), ("SAVE_EXCURSION", None), ("SAVE_CURRENT_BUFFER", None), ("WHILE", None), ("INLINE", None), ("PROGN", None), ("PROG1", None), ("PROG2", None), ("SETQ", None), ("DEFCONST", None), ("COND", None), ("LET", None), ("LET_STAR", Some("\"let*\"")), ("IF", None), ("AND", None), ("OR", None), ("INTERACTIVE", None), ("CATCH", None), ("THROW", None), ("ERROR", None), ("DEBUG", None), ("VOID_VARIABLE", None)]
 ```
 
